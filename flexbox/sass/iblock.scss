@@ -106,14 +106,35 @@ $queries: (
 }
 
 
+.iblock-grid.container-fluid:after,
+.iblock-grid .container-fluid:after,
+.iblock-grid.container-fluid:before,
+.iblock-grid .container-fluid:before,
+.iblock-grid.container:after,
+.iblock-grid .container:after,
+.iblock-grid.container:before,
+.iblock-grid .container:before{
+	display:none;
+}
+
+
+
+
+
+.iblock-grid,	
+.no-flex .flexbox-grid{
 	
-.no-flex .flexbox{
 	.row {
 		letter-spacing: -.65em; 
 		margin-left: -$gutter;
 		margin-right: -$gutter;
 		text-align: left;
 		display: block;
+	}
+  
+  .row:after,
+	.row:before{
+		display:none;
 	}
   
 	.row>[class^="col-"] {

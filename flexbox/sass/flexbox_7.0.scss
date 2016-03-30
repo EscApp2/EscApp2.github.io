@@ -159,18 +159,35 @@ $offset-properties: 'margin-left' !default;
   padding-left: $half-gutter-width;
 }
 
-.flexbox.container-fluid,
-.flexbox .container-fluid{
+
+
+.flexbox-grid.container-fluid,
+.flexbox-grid .container-fluid{
   @include container-fluid();
 }
 
+.flexbox-grid.container-fluid:after,
+.flexbox-grid .container-fluid:after,
+.flexbox-grid.container-fluid:before,
+.flexbox-grid .container-fluid:before,
+.flexbox-grid.container:after,
+.flexbox-grid .container:after,
+.flexbox-grid.container:before,
+.flexbox-grid .container:before{
+	display:none;
+}
 
 
-.flexbox{
+.flexbox-grid{
 	.row {
 	  @include row();
 	}
-
+	
+	.row:after,
+	.row:before{
+		display:none;
+	}
+	
 	%column {
 	  @include column();
 	}
