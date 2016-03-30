@@ -1,0 +1,133 @@
+$column-count: 12 !default;
+$gutter:       1em !default;
+
+$viewport-xs: 30em !default;
+$viewport-sm: 48em !default;
+$viewport-md: 64em !default;
+$viewport-lg: 75em !default;
+
+$xs: 'xs' !default;
+$sm: 'sm' !default;
+$md: 'md' !default;
+$lg: 'lg' !default;
+
+$default-viewport: $xs !default;
+
+$queries: (
+	$xs: $viewport-xs, 
+	$sm: $viewport-sm, 
+	$md: $viewport-md, 
+	$lg: $viewport-lg,
+) !default;
+
+@function column ($i) {
+	@return ($i / $column-count) * 100%;
+}
+
+@mixin viewport($viewport,$column-count:$column-count){
+  .row.start-#{$viewport},
+	.row.left-#{$viewport}{
+		text-align: left;
+	}
+	
+	.row.center-#{$viewport}{
+		text-align: center;
+	}
+	
+	.row.end-#{$viewport},
+	.row.right-#{$viewport}{
+		text-align: right;
+	}
+	
+	.row.top-#{$viewport}>[class^="col-"]{
+		vertical-align: top;
+	}
+	
+	.row.middle-#{$viewport}>[class^="col-"]{
+		vertical-align: middle;
+	}
+	.row.bottom-#{$viewport}>[class^="col-"]{
+		vertical-align: bottom;
+	}
+	
+	.row.justify-#{$viewport},
+	.row.between-#{$viewport},
+	.row.around-#{$viewport}{
+		text-align: justify;
+		text-justify: distribute-all-lines;/*IE*/
+		-moz-text-align-last: justify;
+		-webkit-text-align-last: justify; /* not implemented yet (2012), and will not be */
+		text-align-last: justify;/*IE 8+*/
+	}
+	
+	.row.reverse-#{$viewport}{
+		direction: rtl;
+	}
+	.row.reverse-#{$viewport}>[class^="col-"]{
+		direction: ltr;
+	}
+  
+	@for $i from 0 through $column-count {
+		@if ($i == 0) {
+			.col-#{$viewport} {
+				width: 100%;
+			}
+		}@else {
+			.col-#{$viewport+"-"+$i} {
+				width: column($i);
+			}
+			.col-#{$viewport+"-offset-"+$i} {
+				margin-left: column($i);
+			}
+		}
+	}
+  
+}
+
+@mixin bug($var){
+  	.element{
+  	    debug:$var;
+  	}
+}
+
+@mixin foreach_viewport($array, $default-viewport:$default-viewport) {
+	$map-keys: map-keys($array);
+	@each $viewport in $map-keys {
+	  $width: map-get($array, $viewport);		
+		@if ($viewport == $default-viewport) {
+			@include viewport($viewport); 
+		} @else {
+			@media screen and (min-width: $width) {
+				@include viewport($viewport);
+			}
+		}
+		
+	}
+}
+
+
+	
+.no-flex .flexbox{
+	.row {
+		letter-spacing: -.65em; 
+		margin-left: -$gutter;
+		margin-right: -$gutter;
+		text-align: left;
+		display: block;
+	}
+  
+	.row>[class^="col-"] {
+		letter-spacing: normal;
+		display: inline-block;
+		padding-left: $gutter;
+		padding-right: $gutter;
+		position: relative;
+		float: none;
+		box-sizing: border-box;
+		
+		text-align: left;
+		vertical-align: top;
+	}
+
+  @include foreach_viewport($queries);
+}
