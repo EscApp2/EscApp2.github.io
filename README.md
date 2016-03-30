@@ -1,3 +1,2 @@
 # EscApp2.github.io
-
-# FORK https://github.com/kristoferjoseph/flexboxgrid
+# Fork of https://github.com/kristoferjoseph/flexboxgrid
