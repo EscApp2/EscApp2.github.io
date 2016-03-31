@@ -24,9 +24,7 @@
 .cornsilk{
 	background-color:#FFF8DC;
 }
-.red{
-	background-color:#800000;
-}
+
 .teal{
 	background-color:#008080;
 }
@@ -46,10 +44,13 @@
 	background-color:#000000;
 }
 .green{
-	background-color:#98FB98;
+	background-color:#2E8B57;
 }
 .blue{
 	background-color:#00BFFF;
+}
+.red{
+	background-color:#DC143C;
 }
 
 .width100{
@@ -68,6 +69,9 @@
 }
 .example_row{
 	padding: 15px;
+}
+.example_col{
+	padding:5px;
 }
 .wrap{
 	max-width:1250px;
