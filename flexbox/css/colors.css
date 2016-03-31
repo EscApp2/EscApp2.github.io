@@ -1,47 +1,61 @@
 .midnightblue{
-	color:#191970;
+	background-color:#191970;
 }
 
 .limegreen{
-	color:#32CD32;
+	background-color:#32CD32;
 }
 
 .honeydew{
-	color:#F0FFF0;
+	background-color:#F0FFF0;
 }
 
 .whitesmoke{
-	color:#F5F5F5;
+	background-color:#F5F5F5;
 }
 
 .lightgoldenrodyellow{
-	color:#FAFAD2;
+	background-color:#FAFAD2;
 }
 
 .slategray{
-	color:#708090;
+	background-color:#708090;
 }
 .cornsilk{
-	color:#FFF8DC;
+	background-color:#FFF8DC;
 }
-.maroon{
-	color:#800000;
+.red{
+	background-color:#800000;
 }
 .teal{
-	color:#008080;
+	background-color:#008080;
 }
 
 .darkslategrey{
-	color:#2F4F4F;
+	background-color:#2F4F4F;
 }
 
 .yellow{
-	color:#FFFF00;
+	background-color:#FFFF00;
+}
+.gold{
+	background-color:#FFD700;
+}
+
+.black{
+	background-color:#000000;
+}
+.green{
+	background-color:#98FB98;
+}
+.blue{
+	background-color:#00BFFF;
 }
 
 .width100{
 	width:100%;
 }
+
 .ta_c{
 	text-align:center;
 }
@@ -52,7 +66,9 @@
 	height:5px;
 	width:100%;
 }
-
+.example_row{
+	padding: 15px;
+}
 .wrap{
 	max-width:1250px;
 	margin:auto;
