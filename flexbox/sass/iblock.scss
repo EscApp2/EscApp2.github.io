@@ -130,9 +130,11 @@ $queries: (
 		margin-right: -$gutter;
 		text-align: left;
 		display: block;
+		
+		overflow:hidden;	/*100% height*/ /*https://css-tricks.com/fluid-width-equal-height-columns/*/
 	}
   
-  .row:after,
+	.row:after,
 	.row:before{
 		display:none;
 	}
@@ -148,6 +150,9 @@ $queries: (
 		
 		text-align: left;
 		vertical-align: top;
+		
+		margin-bottom: -99999px; /*100% height*/
+		padding-bottom: 99999px; /*100% height*/
 	}
 
   @include foreach_viewport($queries);

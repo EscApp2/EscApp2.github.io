@@ -16,6 +16,9 @@
   margin-right: -1em;
   text-align: left;
   display: block;
+  overflow: hidden;
+  /*100% height*/
+  /*https://css-tricks.com/fluid-width-equal-height-columns/*/
 }
 .iblock-grid .row:after,
 .iblock-grid .row:before,
@@ -36,6 +39,10 @@
           box-sizing: border-box;
   text-align: left;
   vertical-align: top;
+  margin-bottom: -99999px;
+  /*100% height*/
+  padding-bottom: 99999px;
+  /*100% height*/
 }
 .iblock-grid .row.start-xs,
 .iblock-grid .row.left-xs,
