@@ -3,7 +3,7 @@ $column-selector: '.col' !default;
 $offset-modifier: 'offset' !default;
 
 $gutter-width: 1em !default;
-$outer-margin: 2em !default;
+$outer-margin: 1em !default;
 $gutter-compensation: (($gutter-width) * -1) !default;
 $half-gutter-width: ($gutter-width / 2) !default;
 
